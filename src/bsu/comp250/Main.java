@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person person1=new Person("Sam", 69);
+        /*Person person1=new Person("Sam", 69);
         System.out.println(person1.name);
         System.out.println(person1.age);
         System.out.println();
@@ -17,25 +17,31 @@ public class Main {
         Patient patient1=new Patient("Leroy", 35, "Dr.Smith");
         System.out.println(patient1.name);
         System.out.println(patient1.age);
-        System.out.println(patient1.doctor);
+        System.out.println(patient1.doctor);*/
 
 
         ArrayList<String> patients =new ArrayList<String>();
-
-
-        Scanner patient=new Scanner(System.in);
+        String txtFile;
         Scanner keyboard;
 
+        txtFile=new String();
+        Scanner patientScan=new Scanner(System.in);
+
+
         try{
-            patient=new Scanner(new File("C:\\Users\\samgo\\Documents\\Java Projects\\Comp 250\\SamG_Project1\\src\\bsu\\comp250\\patients.txt"));
+            patientScan=new Scanner(new File("C:\\Users\\samgo\\Documents\\Java Projects\\Comp 250\\SamG_Project1\\src\\bsu\\comp250\\patients.txt"));
 
         }catch (FileNotFoundException e){
             System.out.println("patients.txt not found");
         }
+        String fileContent="";
+        while (patientScan.hasNextLine()){
+            fileContent=fileContent.concat(patientScan.nextLine()+"\n");
 
-        while (patient.hasNextLine()){
-            System.out.println(patient.nextLine());
+
+
         }
+        System.out.println(fileContent);
 
 
 
