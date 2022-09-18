@@ -3,6 +3,7 @@ package bsu.comp250;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -34,14 +35,15 @@ public class Main {
         }catch (FileNotFoundException e){
             System.out.println("patients.txt not found");
         }
-        String fileContent="";
+
+        String fileContent = "";
         while (patientScan.hasNextLine()){
             fileContent=fileContent.concat(patientScan.nextLine()+"\n");
-
-
-
         }
-        System.out.println(fileContent);
+
+        String[] noComma=fileContent.split(",");//does not work
+
+        System.out.println(Arrays.toString(noComma));
 
 
 
