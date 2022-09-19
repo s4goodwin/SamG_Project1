@@ -26,24 +26,34 @@ public class Main {
         Scanner keyboard;
 
         txtFile=new String();
-        Scanner patientScan=new Scanner(System.in);
+        Scanner txtFileScan;
 
 
         try{
-            patientScan=new Scanner(new File("C:\\Users\\samgo\\Documents\\Java Projects\\Comp 250\\SamG_Project1\\src\\bsu\\comp250\\patients.txt"));
+            txtFileScan=new Scanner(new File("C:\\Users\\samgo\\Documents\\Java Projects\\Comp 250\\SamG_Project1\\src\\bsu\\comp250\\patients.txt"));
 
         }catch (FileNotFoundException e){
             System.out.println("patients.txt not found");
+            return;
         }
 
-        String fileContent = "";
-        while (patientScan.hasNextLine()){
-            fileContent=fileContent.concat(patientScan.nextLine()+"\n");
+
+        while (txtFileScan.hasNextLine()){
+            String fileContent=txtFileScan.nextLine();
+            String[] splitValues=fileContent.split(",");
+            System.out.println(splitValues[0]);
+            System.out.println(splitValues[2]);
+            //System.out.println(splitValues[3]);
+            System.out.println();
+
+
+
+            //fileContent=fileContent.concat(txtFileScan.nextLine()+"\n");
         }
 
-        String[] noComma=fileContent.split(",");//does not work
+        //String[] noComma=txtFileScan.split(",");//does not work
 
-        System.out.println(Arrays.toString(noComma));
+        //System.out.println(Arrays.toString(noComma));
 
 
 
