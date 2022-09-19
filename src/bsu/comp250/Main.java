@@ -41,9 +41,11 @@ public class Main {
         while (txtFileScan.hasNextLine()){
             String fileContent=txtFileScan.nextLine();
             String[] splitValues=fileContent.split(",");
+
+
             System.out.println(splitValues[0]);
             System.out.println(splitValues[2]);
-            //System.out.println(splitValues[3]);
+
             System.out.println();
 
 
