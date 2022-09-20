@@ -9,6 +9,7 @@ public class Patient extends Person{
         this.doctor=doctor;
     }
 
+
     @Override
     public String toString() {
         return super.toString()+" "+doctor;

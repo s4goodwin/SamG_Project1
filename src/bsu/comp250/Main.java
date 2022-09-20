@@ -42,7 +42,14 @@ public class Main {
         while (txtFileScan.hasNextLine()){
             String fileContent=txtFileScan.nextLine();
             String[] splitValues=fileContent.split(",");
-            return;
+
+            String splitValuesName=splitValues[0];
+            String splitValuesAgeSt=splitValues[1];
+            String splitValuesDoctor=splitValues[2];
+
+
+
+
 
 
 
