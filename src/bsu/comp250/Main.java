@@ -42,21 +42,54 @@ public class Main {
         while (txtFileScan.hasNextLine()){
             String fileContent=txtFileScan.nextLine();
             String[] splitValues=fileContent.split(",");
+            return;
+
+
 
             /*System.out.println(splitValues[0]);
             System.out.println(splitValues[2]);
 
             System.out.println();*/
 
-            patients=new ArrayList<String>(Arrays.asList(splitValues[0],splitValues[2]));
-            return;
 
+            //Patient ex =new Patient(splitValues[])
+
+            //patients=new ArrayList<String>(Arrays.asList(splitValues[0],splitValues[2]));
             //System.out.println(patients);
 
             //int splitValuesInt=Integer.parseInt(fileContent);
 
             //fileContent=fileContent.concat(txtFileScan.nextLine()+"\n");
         }
+
+
+
+        while (true){
+            keyboard=new Scanner(System.in);
+            System.out.println("Please enter: ");
+            System.out.println("A-to list all patients");
+            System.out.println("B-to list all patients younger than 40");
+            System.out.println("C-to list all patients older than 40");
+            System.out.println("D-to exit");
+
+            String input=keyboard.nextLine();
+            switch (input){
+                case "A":
+                    //call method that loops through list of patients and prints their information using tostring
+
+                case "B":
+                    //calls method only print out information if age is <40
+
+                case "C":
+                    //calls method only print out information if age>40
+
+                case "D":
+                    System.exit(0);
+            }
+
+        }
+
+
 
 
 
