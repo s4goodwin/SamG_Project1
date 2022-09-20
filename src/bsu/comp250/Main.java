@@ -21,9 +21,10 @@ public class Main {
         System.out.println(patient1.doctor);*/
 
 
-        ArrayList<String> patients =new ArrayList<String>();
+        ArrayList<String> patients =null;    //new ArrayList<String>();
         String txtFile;
         Scanner keyboard;
+
 
         txtFile=new String();
         Scanner txtFileScan;
@@ -42,16 +43,29 @@ public class Main {
             String fileContent=txtFileScan.nextLine();
             String[] splitValues=fileContent.split(",");
 
-
-            System.out.println(splitValues[0]);
+            /*System.out.println(splitValues[0]);
             System.out.println(splitValues[2]);
 
-            System.out.println();
+            System.out.println();*/
 
+            patients=new ArrayList<String>(Arrays.asList(splitValues[0],splitValues[2]));
+            return;
 
+            //System.out.println(patients);
+
+            //int splitValuesInt=Integer.parseInt(fileContent);
 
             //fileContent=fileContent.concat(txtFileScan.nextLine()+"\n");
         }
+
+
+
+
+
+
+
+
+
 
         //String[] noComma=txtFileScan.split(",");//does not work
 
