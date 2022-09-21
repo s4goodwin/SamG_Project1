@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
         /*Person person1=new Person("Sam", 69);
@@ -24,10 +25,12 @@ public class Main {
         ArrayList<String> patients =null;    //new ArrayList<String>();
         String txtFile;
         Scanner keyboard;
+        Patient values = null;
 
 
         txtFile=new String();
         Scanner txtFileScan;
+
 
 
         try{
@@ -43,9 +46,23 @@ public class Main {
             String fileContent=txtFileScan.nextLine();
             String[] splitValues=fileContent.split(",");
 
-            String splitValuesName=splitValues[0];
+
+            try{
+                int patientAge=Integer.parseInt(splitValues[1]);
+                Patient current=new Patient(splitValues[0], patientAge,splitValues[2]);
+
+            } catch (Exception e){
+                System.out.println("Invalid age");
+                break;
+            }
+
+
+
+
+
+            /*String splitValuesName=splitValues[0];
             String splitValuesAgeSt=splitValues[1];
-            String splitValuesDoctor=splitValues[2];
+            String splitValuesDoctor=splitValues[2];*/
 
 
 
