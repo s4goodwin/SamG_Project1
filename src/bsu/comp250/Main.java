@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
-
+    public static ArrayList<Patient> allPatients;
     public static void main(String[] args) {
 
         /*Person person1=new Person("Sam", 69);
@@ -22,10 +22,11 @@ public class Main {
         System.out.println(patient1.doctor);*/
 
 
-        ArrayList<String> patients =null;    //new ArrayList<String>();
+            //new ArrayList<String>();
         String txtFile;
         Scanner keyboard;
         Patient values = null;
+
 
 
         txtFile=new String();
@@ -48,11 +49,16 @@ public class Main {
 
 
             try{
+                allPatients=new ArrayList<>();
                 int patientAge=Integer.parseInt(splitValues[1]);
                 Patient current=new Patient(splitValues[0], patientAge,splitValues[2]);
-                System.out.println(current);
+                allPatients.add(current);
+                return;
 
-            } catch (Exception e){
+
+                //System.out.println(current);
+
+            } catch (NumberFormatException e){
                 System.out.println("Invalid age");
                 break;
             }
@@ -100,15 +106,19 @@ public class Main {
             String input=keyboard.nextLine();
             switch (input){
                 case "A":
+                    listAll();
                     //call method that loops through list of patients and prints their information using tostring
 
                 case "B":
+                    listLess40();
                     //calls method only print out information if age is <40
 
                 case "C":
+                    listGreater40();
                     //calls method only print out information if age>40
 
                 case "D":
+                    System.out.println("You selected exit");
                     System.exit(0);
             }
 
@@ -135,7 +145,29 @@ public class Main {
 
     }
 
-    public void listAll(){
+    public static void listAll(){
+        for (Patient current: allPatients){
+            System.out.println(current);
+        }
+    }
 
+    public static void listLess40(){
+        for (Patient current: allPatients){
+
+            if (current < 40) {
+                System.out.println("current");
+            } else
+                break;
+        }
+    }
+
+    public static void listGreater40(){
+        for (Patient current: allPatients){
+
+            if (current >= 40) {
+                System.out.println("current");
+            } else
+                break;
+        }
     }
 }
