@@ -50,6 +50,7 @@ public class Main {
             try{
                 int patientAge=Integer.parseInt(splitValues[1]);
                 Patient current=new Patient(splitValues[0], patientAge,splitValues[2]);
+                System.out.println(current);
 
             } catch (Exception e){
                 System.out.println("Invalid age");
@@ -124,11 +125,17 @@ public class Main {
 
 
 
+
+
         //String[] noComma=txtFileScan.split(",");//does not work
 
         //System.out.println(Arrays.toString(noComma));
 
 
+
+    }
+
+    public void listAll(){
 
     }
 }

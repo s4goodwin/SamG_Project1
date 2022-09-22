@@ -12,6 +12,7 @@ public class Patient extends Person{
 
     @Override
     public String toString() {
-        return super.toString()+" "+doctor;
+
+        return name+" "+age+" "+doctor;
     }
 }
